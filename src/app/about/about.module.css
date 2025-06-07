@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .left {
+    flex: 2;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .right {
+    flex: 1;
+    position: relative;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profileImage {
+    max-width: 90%;
+    border-radius: 10px;
+    height: auto;
+  }
+  
+  .aboutButton {
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .chatButton {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: #333;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .icons {
+    margin-top: 20px;
+  }
+  
+  .icons img {
+    width: 28px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
