@@ -22,12 +22,8 @@ export default function HomePage() {
         </div>
 
         <div className={styles.circle}>
-          <span>4</span>
+          <span>1.5</span>
           <small>Years of<br />Work Experience</small>
-        </div>
-
-        <div className={styles.scrollHint}>
-          Scroll to view more ↓
         </div>
       </section>
     </main>
