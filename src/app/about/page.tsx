@@ -18,7 +18,7 @@ export default function AboutPage() {
         <section className={styles.left}>
           <h1 className={styles.heading}>Hi, I’m Giselle Wang 👋</h1>
           <p className={styles.paragraph}>
-            I’m a software developer based in Toronto, wrapping up my Honours Bachelor of Science in Computer Science and Statistics at the University of Toronto. I’ve been honored to make the Dean’s List while gaining hands-on experience through two exciting co-op roles.
+           I’m a software developer based in Toronto with 1.5 years of hands-on industry experience in full-stack development and test automation. I graduated from the University of Toronto with an Honours Bachelor of Science, double majoring in Computer Science and Statistics.
           </p>
           <p className={styles.paragraph}>
             From test automation at Softchoice to building web scraping tools at Caseware, I’ve loved solving real-world problems through code. My toolbelt includes React, Node.js, PostgreSQL, Selenium, Docker, and a sprinkle of AI using Google Gemini.

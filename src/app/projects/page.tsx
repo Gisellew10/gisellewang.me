@@ -48,7 +48,7 @@ export default function ProjectsPage() {
       <Navbar />
       <main className={styles.page}>
         <h1 className={styles.heading}>
-          From Concept To Impact: <span>Stories Behind The Pixels</span>
+          Pixels with Purpose: <span>Turning Ideas into Impactful Interfaces</span>
         </h1>
         {projects.map((project) => (
           <ProjectCard
