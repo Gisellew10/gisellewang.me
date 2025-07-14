@@ -1051,9 +1051,9 @@ export namespace Prisma {
     company: string
     role: string
     duration: string
-    skills: string
-    description: string
-    icon: string
+    skills: string | null
+    description: string | null
+    icon: string | null
     _count: WorkExperienceCountAggregateOutputType | null
     _avg: WorkExperienceAvgAggregateOutputType | null
     _sum: WorkExperienceSumAggregateOutputType | null
@@ -1125,9 +1125,9 @@ export namespace Prisma {
       company: string
       role: string
       duration: string
-      skills: string
-      description: string
-      icon: string
+      skills: string | null
+      description: string | null
+      icon: string | null
     }, ExtArgs["result"]["workExperience"]>
     composites: {}
   }
@@ -1967,6 +1967,14 @@ export namespace Prisma {
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
 
 
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
   /**
    * Field references
    */
@@ -2025,9 +2033,9 @@ export namespace Prisma {
     company?: StringFilter<"WorkExperience"> | string
     role?: StringFilter<"WorkExperience"> | string
     duration?: StringFilter<"WorkExperience"> | string
-    skills?: StringFilter<"WorkExperience"> | string
-    description?: StringFilter<"WorkExperience"> | string
-    icon?: StringFilter<"WorkExperience"> | string
+    skills?: StringNullableFilter<"WorkExperience"> | string | null
+    description?: StringNullableFilter<"WorkExperience"> | string | null
+    icon?: StringNullableFilter<"WorkExperience"> | string | null
   }
 
   export type WorkExperienceOrderByWithRelationInput = {
@@ -2035,9 +2043,9 @@ export namespace Prisma {
     company?: SortOrder
     role?: SortOrder
     duration?: SortOrder
-    skills?: SortOrder
-    description?: SortOrder
-    icon?: SortOrder
+    skills?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    icon?: SortOrderInput | SortOrder
   }
 
   export type WorkExperienceWhereUniqueInput = Prisma.AtLeast<{
@@ -2048,9 +2056,9 @@ export namespace Prisma {
     company?: StringFilter<"WorkExperience"> | string
     role?: StringFilter<"WorkExperience"> | string
     duration?: StringFilter<"WorkExperience"> | string
-    skills?: StringFilter<"WorkExperience"> | string
-    description?: StringFilter<"WorkExperience"> | string
-    icon?: StringFilter<"WorkExperience"> | string
+    skills?: StringNullableFilter<"WorkExperience"> | string | null
+    description?: StringNullableFilter<"WorkExperience"> | string | null
+    icon?: StringNullableFilter<"WorkExperience"> | string | null
   }, "id">
 
   export type WorkExperienceOrderByWithAggregationInput = {
@@ -2058,9 +2066,9 @@ export namespace Prisma {
     company?: SortOrder
     role?: SortOrder
     duration?: SortOrder
-    skills?: SortOrder
-    description?: SortOrder
-    icon?: SortOrder
+    skills?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    icon?: SortOrderInput | SortOrder
     _count?: WorkExperienceCountOrderByAggregateInput
     _avg?: WorkExperienceAvgOrderByAggregateInput
     _max?: WorkExperienceMaxOrderByAggregateInput
@@ -2076,18 +2084,18 @@ export namespace Prisma {
     company?: StringWithAggregatesFilter<"WorkExperience"> | string
     role?: StringWithAggregatesFilter<"WorkExperience"> | string
     duration?: StringWithAggregatesFilter<"WorkExperience"> | string
-    skills?: StringWithAggregatesFilter<"WorkExperience"> | string
-    description?: StringWithAggregatesFilter<"WorkExperience"> | string
-    icon?: StringWithAggregatesFilter<"WorkExperience"> | string
+    skills?: StringNullableWithAggregatesFilter<"WorkExperience"> | string | null
+    description?: StringNullableWithAggregatesFilter<"WorkExperience"> | string | null
+    icon?: StringNullableWithAggregatesFilter<"WorkExperience"> | string | null
   }
 
   export type WorkExperienceCreateInput = {
     company: string
     role: string
     duration: string
-    skills: string
-    description: string
-    icon: string
+    skills?: string | null
+    description?: string | null
+    icon?: string | null
   }
 
   export type WorkExperienceUncheckedCreateInput = {
@@ -2095,18 +2103,18 @@ export namespace Prisma {
     company: string
     role: string
     duration: string
-    skills: string
-    description: string
-    icon: string
+    skills?: string | null
+    description?: string | null
+    icon?: string | null
   }
 
   export type WorkExperienceUpdateInput = {
     company?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     duration?: StringFieldUpdateOperationsInput | string
-    skills?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    icon?: StringFieldUpdateOperationsInput | string
+    skills?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    icon?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type WorkExperienceUncheckedUpdateInput = {
@@ -2114,9 +2122,9 @@ export namespace Prisma {
     company?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     duration?: StringFieldUpdateOperationsInput | string
-    skills?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    icon?: StringFieldUpdateOperationsInput | string
+    skills?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    icon?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type WorkExperienceCreateManyInput = {
@@ -2124,18 +2132,18 @@ export namespace Prisma {
     company: string
     role: string
     duration: string
-    skills: string
-    description: string
-    icon: string
+    skills?: string | null
+    description?: string | null
+    icon?: string | null
   }
 
   export type WorkExperienceUpdateManyMutationInput = {
     company?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     duration?: StringFieldUpdateOperationsInput | string
-    skills?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    icon?: StringFieldUpdateOperationsInput | string
+    skills?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    icon?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type WorkExperienceUncheckedUpdateManyInput = {
@@ -2143,9 +2151,9 @@ export namespace Prisma {
     company?: StringFieldUpdateOperationsInput | string
     role?: StringFieldUpdateOperationsInput | string
     duration?: StringFieldUpdateOperationsInput | string
-    skills?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
-    icon?: StringFieldUpdateOperationsInput | string
+    skills?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    icon?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -2172,6 +2180,26 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
   }
 
   export type WorkExperienceCountOrderByAggregateInput = {
@@ -2246,8 +2274,30 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -2281,6 +2331,20 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -2325,6 +2389,34 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
 
