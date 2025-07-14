@@ -94,3 +94,27 @@
   list-style-type: disc;
   margin-bottom: 6px;
 }
+
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px; /* Ensures loader is centered in a large space */
+  padding: 2rem;
+}
+
+.loader {
+  width: 300px;   /* ✅ Increased size */
+  height: 300px;  /* ✅ Increased size */
+  animation: spin 1.2s linear infinite;
+}
+
+/* Optional: loader spin animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
